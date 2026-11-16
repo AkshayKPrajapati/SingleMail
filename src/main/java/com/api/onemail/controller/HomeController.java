@@ -1,7 +1,4 @@
 package com.api.onemail.controller;
-
-import java.util.Map;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,7 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 
     @GetMapping("/")
-    public Map<String, String> home() {
-        return Map.of("status", "OneMail API is running");
+    public String home() {
+        return "OneMail Application is Running!";
+    }
+
+    @GetMapping("/health")
+    public String health() {
+        return "OK";
     }
 }
